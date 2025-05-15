@@ -48,7 +48,7 @@
             <span class="author-block">Shivani Chiranjeevi<sup>*</sup>, Hossein Zaremehrjerdi<sup>*</sup>, Zi K. Deng, Talukder Z. Jubery, Ari Grele,<br>Arti Singh, Asheesh K Singh, Soumik Sarkar, Nirav Merchant, Harold F. Greeney,<br>Baskar Ganapathysubramanian, Chinmay Hegde</span>
           </div>
           <div class="is-size-5 publication-authors">
-            <span class="author-block">Iowa State University, University of Arizona, NYU, Yanayacu Biological Station<br>NeurIPS 2025 Datasets and Benchmarks Track</span>
+            <span class="author-block">Iowa State University, University of Arizona, New York University, Yanayacu Biological Station<br>NeurIPS 2025 Datasets and Benchmarks Track</span>
             <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
           </div>
           <div class="column has-text-centered">
@@ -91,7 +91,30 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          <p>TerraIncognita is a field-derived benchmark for open-world insect classification, focusing on taxonomic discovery and biologically grounded explanation. It contains both fully labeled known species and partially labeled novel specimens collected from biodiversity-rich environments. Each image is paired with hierarchical labels and expert-reviewed explanations. We evaluate VLMs on recognition, abstention, and interpretability. Our findings highlight both promise and challenges in deploying foundation models for real-world biodiversity tasks.</p>
+          <p>The rapid global loss of biodiversity, particularly among insects, represents an
+urgent ecological crisis. Current methods for insect species discovery are manual,
+slow, and severely constrained by taxonomic expertise, hindering timely conser-
+vation actions. We introduce TerraIncognita, a dynamic benchmark designed to
+evaluate state-of-the-art multimodal models for the challenging problem of identi-
+fying unknown, potentially novel insect species from image data. Our benchmark
+dataset combines a mix of expertly annotated known insect species, and poten-
+tially novel species collected from underexplored biodiversity hotspots, realistically
+mimicking open-world discovery scenarios faced by ecologists. The benchmark as-
+sesses models’ proficiency in hierarchical taxonomic classification, their capability
+to detect and abstain from out-of-distribution (OOD) samples representing novel
+species, and their ability to generate explanations aligned with expert taxonomic
+knowledge. Notably, top-performing models achieve over 90% F1 at the Order
+level on known species but drop below 2% at the Species level—highlighting
+the sharp difficulty gradient from coarse to fine taxonomic prediction (Order →
+Family → Genus → Species). Discovery accuracy on novel species varies widely,
+from 55% to 88%, revealing inconsistencies in abstention and overcommitment
+strategies across model families. Our evaluation of contemporary frontier multi-
+modal models highlights critical strengths and exposes limitations in their current
+open-world recognition capabilities. TerraIncognita will be updated regularly, and
+by committing to quarterly dataset expansions (of both known and novel species),
+will provide an evolving platform for longitudinal benchmarking of frontier AI
+methods capable of collaboratively accelerating species discovery and biodiversity
+assessment.</p>
         </div>
       </div>
     </div>

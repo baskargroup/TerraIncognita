@@ -37,7 +37,26 @@
   <script src="static/js/index.js"></script>
 </head>
 <body>
-
+<!-- Add Figures Section -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Figures</h2>
+    <div class="has-text-centered mb-6">
+      <img src="static/images/figure1.png" alt="Figure 1" style="max-width:100%; height:auto;">
+      <p class="mt-2">Figure 1: Overall taxonomic coverage and class distribution</p>
+    </div>
+    <div class="columns is-multiline is-centered">
+      <div class="column is-half has-text-centered">
+        <img src="static/images/figure2.png" alt="Figure 2" style="max-width:100%">
+        <p>Figure 2: Order-level predictions</p>
+      </div>
+      <div class="column is-half has-text-centered">
+        <img src="static/images/figure3.png" alt="Figure 3" style="max-width:100%">
+        <p>Figure 3: Genus prediction spread</p>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
@@ -120,7 +139,47 @@ assessment.</p>
     </div>
   </div>
 </section>
+<!-- Add Toggle Tables Section -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Model Comparison Tables</h2>
+    <div class="buttons is-centered">
+      <button class="button is-link" onclick="showTable(0)">←</button>
+      <button class="button is-link" onclick="showTable(1)">→</button>
+    </div>
+    <div id="table-container">
+      <div class="table-slide" style="display:block">
+        <table class="table is-striped is-fullwidth">
+          <thead><tr><th>Model</th><th>Known Accuracy</th><th>Novel Accuracy</th></tr></thead>
+          <tbody>
+            <tr><td>GPT-4o</td><td>91.2%</td><td>62.5%</td></tr>
+            <tr><td>Gemini</td><td>88.6%</td><td>67.2%</td></tr>
+            <tr><td>LLaMA-4</td><td>84.1%</td><td>53.3%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-slide" style="display:none">
+        <table class="table is-bordered is-fullwidth">
+          <thead><tr><th>Model</th><th>Overreach</th><th>Hallucination</th></tr></thead>
+          <tbody>
+            <tr><td>GPT-4o</td><td>5%</td><td>18%</td></tr>
+            <tr><td>Gemini</td><td>3%</td><td>12%</td></tr>
+            <tr><td>LLaMA-4</td><td>12%</td><td>24%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
 
+<script>
+  function showTable(index) {
+    const slides = document.querySelectorAll('.table-slide');
+    slides.forEach((el, i) => {
+      el.style.display = (i === index) ? 'block' : 'none';
+    });
+  }
+</script>
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>

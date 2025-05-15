@@ -46,7 +46,7 @@
         <div class="column has-text-centered">
           <div class="has-text-centered">
               <div style="display: inline-block; text-align: left; margin-left: 0.8rem;">
-                <img src="static/images/terra_logo.png" alt="TerraIncognita Logo" style="max-height: 120px; margin-bottom: 1rem;">
+                <img src="static/images/terra_logo.png" alt="TerraIncognita Logo" style="max-height: 120px; margin-bottom: 0.7rem;">
               </div>
               <h1 class="title is-1 publication-title">
                 A Dynamic Benchmark for Species Discovery Using Frontier Models
@@ -148,18 +148,15 @@ assessment.</p>
     </div>
     <div id="image-container">
       <div class="image-slide" style="display:block; text-align:center;">
-        <div class="columns is-vcentered" style="align-items: flex-end;">
-  <div class="column is-half">
-    <figure class="image is-4by3" style="display: flex; align-items: flex-end; justify-content: center;">
-      <img src="static/images/order_count.png" alt="Order Count" style="object-fit: contain;">
-    </figure>
-  </div>
-  <div class="column is-half">
-    <figure class="image is-4by3" style="display: flex; align-items: flex-end; justify-content: center;">
-      <img src="static/images/family_count.png" alt="Family Count" style="object-fit: contain;">
-    </figure>
-  </div>
-</div>
+        <div class="columns" style="align-items: flex-end;">
+            <div class="column is-half" style="display: flex; justify-content: center; align-items: flex-end;">
+              <img src="static/images/order_count.png" alt="Order Count" style="max-width: 100%; height: auto;">
+            </div>
+            <div class="column is-half" style="display: flex; justify-content: center; align-items: flex-end;">
+              <img src="static/images/family_count.png" alt="Family Count" style="max-width: 100%; height: auto;">
+            </div>
+          </div>
+
 
         <p class="mt-2">Figure 2: Distribution of species by order and family for Novel species. The dataset is skewed toward
 order of Lepidoptera and family Crambidae. </p>
@@ -187,9 +184,10 @@ Order, Family, and Genus levels. Box sizes are proportional to image counts..</p
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">VLM Evaluation on Discovery Accuracy and Hierarchical Classification Accuracy</h2>
     <div class="buttons is-centered">
-      <button class="button is-link" onclick="showImage(0)">←</button>
-      <button class="button is-link" onclick="showImage(1)">→</button>
+      <button class="button is-link" onclick="prevImage()">←</button>
+      <button class="button is-link" onclick="nextImage()">→</button>
     </div>
+
     <div id="image-container">
       <div class="image-slide" style="display:block; text-align:center;">
         <img src="static/images/discovery_accuracy.png" alt="Discovery Accuracy" style="max-width:100%; height:auto;">
@@ -247,6 +245,42 @@ all taxonomic levels for Known species and at the Order and Family levels for No
     </div>
   </div>
 </footer>
+<script>
+  let currentImageIndex = 0;
+
+  function showImage(index) {
+    const slides = document.querySelectorAll('#image-container .image-slide');
+    const totalSlides = slides.length;
+
+    // Ensure index stays in bounds
+    if (index < 0 || index >= totalSlides) return;
+
+    slides.forEach((slide, i) => {
+      slide.style.display = (i === index) ? 'block' : 'none';
+    });
+
+    currentImageIndex = index;
+  }
+
+  function nextImage() {
+    const slides = document.querySelectorAll('#image-container .image-slide');
+    const totalSlides = slides.length;
+    const nextIndex = (currentImageIndex + 1) % totalSlides;
+    showImage(nextIndex);
+  }
+
+  function prevImage() {
+    const slides = document.querySelectorAll('#image-container .image-slide');
+    const totalSlides = slides.length;
+    const prevIndex = (currentImageIndex - 1 + totalSlides) % totalSlides;
+    showImage(prevIndex);
+  }
+
+  // Initialize
+  document.addEventListener("DOMContentLoaded", () => {
+    showImage(0);
+  });
+</script>
 
 </body>
 </html>

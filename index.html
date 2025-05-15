@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="TerraIncognita: A Benchmark for Insect Biodiversity Discovery">
+  <meta property="og:title" content="TerraIncognita: Insect Biodiversity Benchmark"/>
+  <meta property="og:description" content="A benchmark for evaluating VLMs and open-world models on realistic insect classification tasks."/>
+  <meta property="og:url" content="https://yourusername.github.io/terra-incognita.github.io/"/>
+  <meta property="og:image" content="static/images/terra_banner.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+  <meta name="twitter:title" content="TerraIncognita: Insect Benchmark">
+  <meta name="twitter:description" content="Open-world benchmark for insect biodiversity discovery with VLMs">
+  <meta name="twitter:image" content="static/images/terra_banner.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="insect classification, biodiversity, hierarchical taxonomy, vision-language models, open-world learning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>TerraIncognita: A Benchmark for Insect Biodiversity Discovery</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">TerraIncognita: A Benchmark for Insect Biodiversity Discovery</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Shivani Chiranjeevi<sup>*</sup>, Hossein Zaremehrjerdi<sup>*</sup>, Zi K. Deng, Talukder Z. Jubery, Ari Grele,<br>Arti Singh, Asheesh K Singh, Soumik Sarkar, Nirav Merchant, Harold F. Greeney,<br>Baskar Ganapathysubramanian, Chinmay Hegde</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Iowa State University, University of Arizona, NYU, Yanayacu Biological Station<br>NeurIPS 2025 Datasets and Benchmarks Track</span>
+            <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+          </div>
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://huggingface.co/datasets/BGLab/TerraIncognita" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-database"></i></span>
+                  <span>Dataset</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="ai ai-arxiv"></i></span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>TerraIncognita is a field-derived benchmark for open-world insect classification, focusing on taxonomic discovery and biologically grounded explanation. It contains both fully labeled known species and partially labeled novel specimens collected from biodiversity-rich environments. Each image is paired with hierarchical labels and expert-reviewed explanations. We evaluate VLMs on recognition, abstention, and interpretability. Our findings highlight both promise and challenges in deploying foundation models for real-world biodiversity tasks.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{chiranjeevi2025terraincognita,
+  title={TerraIncognita: A Benchmark for Insect Biodiversity Discovery},
+  author={Chiranjeevi, Shivani and Zaremehrjerdi, Hossein and Deng, Zi K. and Jubery, Talukder Z. and Grele, Ari and Singh, Arti and Singh, Asheesh K. and Sarkar, Soumik and Merchant, Nirav and Greeney, Harold F. and Ganapathysubramanian, Baskar and Hegde, Chinmay},
+  booktitle={NeurIPS 2025 Datasets and Benchmarks Track},
+  year={2025}
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>. Feel free to reuse it.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

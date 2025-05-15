@@ -89,7 +89,10 @@
   <div class="container is-max-desktop">
     <div class="has-text-centered mb-6">
       <img src="static/images/terra_setup.png" alt="Figure 1" style="max-width:100%; height:auto;">
-      <p class="mt-2">Figure 1: Overview of the TerraIncognita data collection pipeline. </p>
+      <p class="mt-2">Figure 1: Overview of the TerraIncognita data collection pipeline. Insect specimens are first captured
+using light traps and examined by an entomologist or field expert. Images are then filtered using
+commercial-grade image classification tools to detect known taxonomic matches. If a specimen does
+not match existing species-level entries, it is flagged as potentially novel. </p>
     </div>
   </div>
 </section>
@@ -128,6 +131,46 @@ assessment.</p>
     </div>
   </div>
 </section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Dataset Features</h2>
+    <div class="buttons is-centered">
+      <button class="button is-link" onclick="showImage(0)">←</button>
+      <button class="button is-link" onclick="showImage(1)">→</button>
+      <button class="button is-link" onclick="showImage(2)">→→</button>
+    </div>
+    <div id="image-container">
+      <div class="image-slide" style="display:block; text-align:center;">
+        <div class="columns is-centered">
+          <div class="column is-half">
+            <img src="static/images/order_count.png" alt="Discovery Accuracy" style="max-width:100%; height:auto;">
+          </div>
+          <div class="column is-half">
+            <img src="static/images/family_count.png" alt="Hierarchical Accuracy" style="max-width:100%; height:auto;">
+          </div>
+        </div>
+        <p class="mt-2">Figure 2: Distribution of species by order and family for Novel species. The dataset is skewed toward
+order of Lepidoptera and family Crambidae. </p>
+      </div>
+
+      <div class="image-slide" style="display:none; text-align:center;">
+        <img src="static/images/failure_modes.png" alt="Failure Modes" style="max-width:100%; height:auto;">
+        <p class="mt-2">Figure 3: Treemap showing the hierarchical taxonomic distribution of Novel insect species across
+Order, Family, and Genus levels. Box sizes are proportional to image counts..</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function showImage(index) {
+    const slides = document.querySelectorAll('.image-slide');
+    slides.forEach((el, i) => {
+      el.style.display = (i === index) ? 'block' : 'none';
+    });
+  }
+</script>  
 <!-- Add Toggle Tables Section -->
 <section class="section">
   <div class="container is-max-desktop">
@@ -139,11 +182,12 @@ assessment.</p>
     <div id="image-container">
       <div class="image-slide" style="display:block; text-align:center;">
         <img src="static/images/discovery_accuracy.png" alt="Discovery Accuracy" style="max-width:100%; height:auto;">
-        <p class="mt-2">Figure: Discovery Accuracy across Models</p>
+        <p class="mt-2">Table 1: Discovery Accuracy comparison between Known and Novel species across models.</p>
       </div>
       <div class="image-slide" style="display:none; text-align:center;">
         <img src="static/images/hierarchical_accuracy.png" alt="Hierarchical Accuracy" style="max-width:100%; height:auto;">
-        <p class="mt-2">Figure: Hierarchical Classification Accuracy (Order → Species)</p>
+        <p class="mt-2">Table 2: Performance of VLMs on the biodiversity benchmark. We report taxonomic metrics across
+all taxonomic levels for Known species and at the Order and Family levels for Novel species.</p>
       </div>
     </div>
   </div>

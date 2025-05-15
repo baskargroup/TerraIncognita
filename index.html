@@ -49,7 +49,7 @@
             <span class="author-block" style="color: #3273dc;">Shivani Chiranjeevi<sup></sup>, Hossein Zaremehrjerdi<sup></sup>, Zi K. Deng, Talukder Z. Jubery, Ari Grele,<br>Arti Singh, Asheesh K Singh, Soumik Sarkar, Nirav Merchant, Harold F. Greeney,<br>Baskar Ganapathysubramanian, Chinmay Hegde</span>
           </div>
           <div class="is-size-5 publication-authors">
-            <span class="author-block">Iowa State University, University of Arizona, New York University, Yanayacu Biological Station<br>NeurIPS 2025 Datasets and Benchmarks Track</span>
+            <span class="author-block">Iowa State University, University of Arizona, New York University, Yanayacu Biological Station<br>2025 Datasets and Benchmarks Track</span>
             
           </div>
           <div class="column has-text-centered">
@@ -88,7 +88,7 @@
 <section class="section">
   <div class="container is-max-desktop">
     <div class="has-text-centered mb-6">
-      <img src="static/images/terra_setup.png" alt="Figure 1" style="max-width:60%; height:auto;">
+      <img src="static/images/terra_setup.png" alt="Figure 1" style="max-width:100%; height:auto;">
       <p class="mt-2">Figure 1: Overview of the TerraIncognita data collection pipeline. </p>
     </div>
   </div>
@@ -131,35 +131,33 @@ assessment.</p>
 <!-- Add Toggle Tables Section -->
 <section class="section">
   <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Model Comparison Tables</h2>
+    <h2 class="title is-3 has-text-centered">VLM Evaluation on Discovery Accuracy and Hierarchical Classification Accuracy</h2>
     <div class="buttons is-centered">
-      <button class="button is-link" onclick="showTable(0)">←</button>
-      <button class="button is-link" onclick="showTable(1)">→</button>
+      <button class="button is-link" onclick="showImage(0)">←</button>
+      <button class="button is-link" onclick="showImage(1)">→</button>
     </div>
-    <div id="table-container">
-      <div class="table-slide" style="display:block">
-        <table class="table is-striped is-fullwidth">
-          <thead><tr><th>Model</th><th>Known Accuracy</th><th>Novel Accuracy</th></tr></thead>
-          <tbody>
-            <tr><td>GPT-4o</td><td>91.2%</td><td>62.5%</td></tr>
-            <tr><td>Gemini</td><td>88.6%</td><td>67.2%</td></tr>
-            <tr><td>LLaMA-4</td><td>84.1%</td><td>53.3%</td></tr>
-          </tbody>
-        </table>
+    <div id="image-container">
+      <div class="image-slide" style="display:block; text-align:center;">
+        <img src="static/images/discovery_accuracy.png" alt="Discovery Accuracy" style="max-width:100%; height:auto;">
+        <p class="mt-2">Figure: Discovery Accuracy across Models</p>
       </div>
-      <div class="table-slide" style="display:none">
-        <table class="table is-bordered is-fullwidth">
-          <thead><tr><th>Model</th><th>Overreach</th><th>Hallucination</th></tr></thead>
-          <tbody>
-            <tr><td>GPT-4o</td><td>5%</td><td>18%</td></tr>
-            <tr><td>Gemini</td><td>3%</td><td>12%</td></tr>
-            <tr><td>LLaMA-4</td><td>12%</td><td>24%</td></tr>
-          </tbody>
-        </table>
+      <div class="image-slide" style="display:none; text-align:center;">
+        <img src="static/images/hierarchical_accuracy.png" alt="Hierarchical Accuracy" style="max-width:100%; height:auto;">
+        <p class="mt-2">Figure: Hierarchical Classification Accuracy (Order → Species)</p>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+  function showImage(index) {
+    const slides = document.querySelectorAll('.image-slide');
+    slides.forEach((el, i) => {
+      el.style.display = (i === index) ? 'block' : 'none';
+    });
+  }
+</script>
+
 
 <script>
   function showTable(index) {

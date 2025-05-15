@@ -142,65 +142,58 @@ assessment.</p>
 <section class="section">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Dataset Features</h2>
+
     <div class="buttons is-centered">
-      <button class="button is-link" onclick="showImage(0)">←</button>
-      <button class="button is-link" onclick="showImage(1)">→</button>
+      <button class="button is-link" onclick="prevImage('dataset')">←</button>
+      <button class="button is-link" onclick="nextImage('dataset')">→</button>
     </div>
-    <div id="image-container">
-      <div class="image-slide" style="display:block; text-align:center;">
+
+    <div id="image-container-dataset">
+      <div class="image-slide-dataset" style="display:block; text-align:center;">
         <div class="columns" style="align-items: flex-end;">
-            <div class="column is-half" style="display: flex; justify-content: center; align-items: flex-end;">
-              <img src="static/images/order_count.png" alt="Order Count" style="max-width: 100%; height: auto;">
-            </div>
-            <div class="column is-half" style="display: flex; justify-content: center; align-items: flex-end;">
-              <img src="static/images/family_count.png" alt="Family Count" style="max-width: 100%; height: auto;">
-            </div>
+          <div class="column is-half" style="display: flex; justify-content: center; align-items: flex-end;">
+            <img src="static/images/order_count.png" alt="Order Count" style="max-width: 100%; height: auto;">
           </div>
-
-
-        <p class="mt-2">Figure 2: Distribution of species by order and family for Novel species. The dataset is skewed toward
-order of Lepidoptera and family Crambidae. </p>
+          <div class="column is-half" style="display: flex; justify-content: center; align-items: flex-end;">
+            <img src="static/images/family_count.png" alt="Family Count" style="max-width: 100%; height: auto;">
+          </div>
+        </div>
+        <p class="mt-2">Figure 2: Distribution of species by order and family for Novel species. The dataset is skewed toward the order Lepidoptera and family Crambidae.</p>
       </div>
 
-      <div class="image-slide" style="display:none; text-align:center;">
-        <img src="static/images/treemap.png" alt="Failure Modes" style="max-width:100%; height:auto;">
-        <p class="mt-2">Figure 3: Treemap showing the hierarchical taxonomic distribution of Novel insect species across
-Order, Family, and Genus levels. Box sizes are proportional to image counts..</p>
+      <div class="image-slide-dataset" style="display:none; text-align:center;">
+        <img src="static/images/treemap.png" alt="Treemap" style="max-width:100%; height:auto;">
+        <p class="mt-2">Figure 3: Treemap showing the hierarchical taxonomic distribution of Novel insect species across Order, Family, and Genus levels. Box sizes are proportional to image counts.</p>
       </div>
     </div>
   </div>
 </section>
 
-<script>
-  function showImage(index) {
-    const slides = document.querySelectorAll('.image-slide');
-    slides.forEach((el, i) => {
-      el.style.display = (i === index) ? 'block' : 'none';
-    });
-  }
-</script>  
+
 <!-- Add Toggle Tables Section -->
 <section class="section">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">VLM Evaluation on Discovery Accuracy and Hierarchical Classification Accuracy</h2>
+
     <div class="buttons is-centered">
-      <button class="button is-link" onclick="prevImage()">←</button>
-      <button class="button is-link" onclick="nextImage()">→</button>
+      <button class="button is-link" onclick="prevImage('vlm')">←</button>
+      <button class="button is-link" onclick="nextImage('vlm')">→</button>
     </div>
 
-    <div id="image-container">
-      <div class="image-slide" style="display:block; text-align:center;">
+    <div id="image-container-vlm">
+      <div class="image-slide-vlm" style="display:block; text-align:center;">
         <img src="static/images/discovery_accuracy.png" alt="Discovery Accuracy" style="max-width:100%; height:auto;">
         <p class="mt-2">Table 1: Discovery Accuracy comparison between Known and Novel species across models.</p>
       </div>
-      <div class="image-slide" style="display:none; text-align:center;">
+
+      <div class="image-slide-vlm" style="display:none; text-align:center;">
         <img src="static/images/hierarchical_accuracy.png" alt="Hierarchical Accuracy" style="max-width:100%; height:auto;">
-        <p class="mt-2">Table 2: Performance of VLMs on the biodiversity benchmark. We report taxonomic metrics across
-all taxonomic levels for Known species and at the Order and Family levels for Novel species.</p>
+        <p class="mt-2">Table 2: Performance of VLMs on the biodiversity benchmark. We report taxonomic metrics across all taxonomic levels for Known species and at the Order and Family levels for Novel species.</p>
       </div>
     </div>
   </div>
 </section>
+
 
 <script>
   function showImage(index) {
@@ -246,41 +239,42 @@ all taxonomic levels for Known species and at the Order and Family levels for No
   </div>
 </footer>
 <script>
-  let currentImageIndex = 0;
+  let currentIndices = {
+    dataset: 0,
+    vlm: 0
+  };
 
-  function showImage(index) {
-    const slides = document.querySelectorAll('#image-container .image-slide');
+  function showImage(sliderName, index) {
+    const slides = document.querySelectorAll(`.image-slide-${sliderName}`);
     const totalSlides = slides.length;
 
-    // Ensure index stays in bounds
     if (index < 0 || index >= totalSlides) return;
 
     slides.forEach((slide, i) => {
       slide.style.display = (i === index) ? 'block' : 'none';
     });
 
-    currentImageIndex = index;
+    currentIndices[sliderName] = index;
   }
 
-  function nextImage() {
-    const slides = document.querySelectorAll('#image-container .image-slide');
-    const totalSlides = slides.length;
-    const nextIndex = (currentImageIndex + 1) % totalSlides;
-    showImage(nextIndex);
+  function nextImage(sliderName) {
+    const totalSlides = document.querySelectorAll(`.image-slide-${sliderName}`).length;
+    let nextIndex = (currentIndices[sliderName] + 1) % totalSlides;
+    showImage(sliderName, nextIndex);
   }
 
-  function prevImage() {
-    const slides = document.querySelectorAll('#image-container .image-slide');
-    const totalSlides = slides.length;
-    const prevIndex = (currentImageIndex - 1 + totalSlides) % totalSlides;
-    showImage(prevIndex);
+  function prevImage(sliderName) {
+    const totalSlides = document.querySelectorAll(`.image-slide-${sliderName}`).length;
+    let prevIndex = (currentIndices[sliderName] - 1 + totalSlides) % totalSlides;
+    showImage(sliderName, prevIndex);
   }
 
-  // Initialize
   document.addEventListener("DOMContentLoaded", () => {
-    showImage(0);
+    showImage('dataset', 0);
+    showImage('vlm', 0);
   });
 </script>
+
 
 </body>
 </html>

@@ -30,7 +30,8 @@ Make sure the dataset folder contains:
 - Required libraries: `pandas`, `openai`, `anthropic`, `google.generativeai`, etc.
 
 
-## 🚀 Run the Evaluation Script
+## 🚀 Run the Evaluation Script 
+Here we show an example of running the script on Novel split
 
 ```python
 import os

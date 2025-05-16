@@ -1,6 +1,6 @@
-# 🐞 TerraIncognita: VLM-Based Insect Classification Benchmark
+# 🐞 TerraIncognita: VLM Evaluation on Dynamic Benchmark 
 
-This repository evaluates **Vision-Language Models (VLMs)** on hierarchical insect classification tasks. Models are tested on their ability to recognize **known** and **novel** species across multiple taxonomic levels (Order, Family, Genus, Species), using real-world field-collected data.
+This repository evaluates **Vision-Language Models (VLMs)** on hierarchical insect classification tasks and discovery accuracy. Models are tested on their ability to recognize **known** and **novel** species across multiple taxonomic levels (Order, Family, Genus, Species), using real-world field-collected data.
 
 ## 📥 Dataset
 
@@ -18,9 +18,10 @@ git clone https://huggingface.co/datasets/BGLab/TerraIncognita/
 ```
 
 Make sure the dataset folder contains:
-- `new_species_100/` (input images)
-- `new_species_100_classification.xlsx` (ground truth)
-
+- `Known/` (input images)
+- `metadata_known.csv` (ground truth)
+- `Novel/` (input images)
+- `metadata_novel.csv` (ground truth)
 ## 🧠 Inference & Evaluation Pipeline
 
 ### 📦 Requirements
@@ -28,16 +29,6 @@ Make sure the dataset folder contains:
 - API keys: `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `GEMINI_API_KEY`, `TOGETHER_API_KEY`, `GROK_API_KEY`
 - Required libraries: `pandas`, `openai`, `anthropic`, `google.generativeai`, etc.
 
-## 📁 Directory Setup
-
-```bash
-cd /work/mech-ai/iNaturalist/DETReg/detection_tests/up-detr/VLM_Analysis/data_version4/
-```
-
-Ensure the following structure:
-- `new_species_100/` – Input images
-- `new_species_100_classification.xlsx` – Ground truth labels
-- `vlm_eval_outputs/` – Output directory (created automatically)
 
 ## 🚀 Run the Evaluation Script
 
@@ -49,9 +40,8 @@ from vlm_inference.vlm_calls import (
     run_together_inference, run_grok_inference
 )
 
-os.chdir('/work/mech-ai/iNaturalist/DETReg/detection_tests/up-detr/VLM_Analysis/data_version4/')
-image_dir = "new_species_100"
-ground_truth = "new_species_100_classification.xlsx"
+image_dir = "Novel"
+ground_truth = "metadata_novel.csv"
 output_dir = "vlm_eval_outputs/"
 os.makedirs(output_dir, exist_ok=True)
 

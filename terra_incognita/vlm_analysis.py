@@ -44,7 +44,7 @@ def parse_responses(results):
 
 # ---------- EVALUATION METRICS ----------
 def evaluate_classification(pred_df, ground_truth_xlsx, output_xlsx=None):
-    gt_df = pd.read_excel(ground_truth_xlsx)
+    gt_df = pd.read_csv(ground_truth_xlsx)
     gt_map = gt_df.set_index("Folder")[["Order", "Family", "Genus", "Species"]].to_dict(orient="index")
 
     # Extract folder number from image path to match

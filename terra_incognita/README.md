@@ -1,4 +1,4 @@
-# 🐞 TerraIncognita: VLM Evaluation on Dynamic Benchmark 
+# 🐞 TerraIncognita: A Dynamic Benchmark for Species Discovery Using Frontier Models
 
 ## [**Project Page**](https://baskargroup.github.io/TerraIncognita/) | [**GitHub**](https://github.com/baskargroup/TerraIncognita) | [**Hugging Face**](https://huggingface.co/datasets/BGLab/TerraIncognita/) | **Paper (coming soon)**
 This repository evaluates **Vision-Language Models (VLMs)** on hierarchical insect classification tasks and discovery accuracy. Models are tested on their ability to recognize **known** and **novel** species across multiple taxonomic levels (Order, Family, Genus, Species), using real-world field-collected data.

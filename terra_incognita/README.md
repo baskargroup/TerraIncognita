@@ -1,6 +1,6 @@
 # 🐞 TerraIncognita: A Dynamic Benchmark for Species Discovery Using Frontier Models
 
-## [**Project Page**](https://baskargroup.github.io/TerraIncognita/) | [**GitHub**](https://github.com/baskargroup/TerraIncognita) | [**Hugging Face**](https://huggingface.co/datasets/BGLab/TerraIncognita/) | **Paper (coming soon)**
+## [**Project Page**](https://baskargroup.github.io/TerraIncognita/) | [**GitHub**](https://github.com/baskargroup/TerraIncognita) | [**Hugging Face**](https://huggingface.co/datasets/BGLab/TerraIncognita/) | [**Paper**](https://arxiv.org/html/2506.03182v1)
 This repository evaluates **Vision-Language Models (VLMs)** on hierarchical insect classification tasks and discovery accuracy. Models are tested on their ability to recognize **known** and **novel** species across multiple taxonomic levels (Order, Family, Genus, Species), using real-world field-collected data.
 
 ## 📥 Dataset
@@ -78,3 +78,28 @@ for model_name, inference_fn in models.items():
 ## 📈 Output
 
 Each model's predictions are saved as `.xlsx` files in `vlm_eval_outputs/`, along with classification reports including F1 scores for every taxonomic level.
+
+## License
+
+This dataset is released under the [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/) license.
+
+You are free to:
+- **Share** — copy and redistribute the material in any medium or format.
+- **Adapt** — remix, transform, and build upon the material for any purpose, even commercially.
+
+**Under the following terms:**
+- **Attribution** — You must give appropriate credit, provide a link to the license, and indicate if changes were made.
+
+Please cite our work when using this dataset in your research.
+
+## Citation
+If you use TerraIncognita in your research, please cite:
+```bibtex
+@inproceedings{chiranjeevi2025terraincognita,
+  title={TerraIncognita: A Dynamic Benchmark for Species Discovery Using Frontier Models},
+  author={Chiranjeevi, Shivani and Zaremehrjerdi, Hossein and Deng, Zi K. and Jubery, Talukder Z. and Grele, Ari and Singh, Arti and Singh, Asheesh K. and Sarkar, Soumik and Merchant, Nirav and Greeney, Harold F. and Ganapathysubramanian, Baskar and Hegde, Chinmay},
+  booktitle={},
+  year={2025}
+}
+```
+---

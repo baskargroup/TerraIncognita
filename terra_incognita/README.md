@@ -81,7 +81,7 @@ Each model's predictions are saved as `.xlsx` files in `vlm_eval_outputs/`, alon
 
 ## License
 
-This dataset is released under the [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/) license.
+The TerraIncognita dataset is released under the [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/) license.
 
 You are free to:
 - **Share** — copy and redistribute the material in any medium or format.

@@ -92,6 +92,17 @@ You are free to:
 
 Please cite our work when using this dataset in your research.
 
+## Responsible Use Disclaimer
+
+This dataset includes images of insects, including potentially undescribed species, photographed in biodiversity-rich regions. This dataset contains images of insects collected using light-trap photography. While all images were without specimen collection, users are strictly discouraged from using this dataset to aid in illegal collection, poaching, habitat disturbance, or any other activity that could harm vulnerable ecosystems. To reduce risk of misuse, all sensitive geolocation metadata has been removed. Please do not attempt to extract or reconstruct location metadata.
+
+Users are strictly discouraged from using this dataset for:
+- illegal collection, poaching or specimen trade,  
+- targeting habitats of rare or undescribed species,  
+- or any action that could negatively impact biodiversity in vulnerable ecosystems.
+
+This dataset is released solely for scientific research and educational purposes, aligned with principles of biodiversity conservation and environmental responsibility.
+
 ## Citation
 If you use TerraIncognita in your research, please cite:
 ```bibtex
